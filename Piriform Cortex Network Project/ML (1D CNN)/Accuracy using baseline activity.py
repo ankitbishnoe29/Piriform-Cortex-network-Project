@@ -40,9 +40,9 @@ main_folders = [
 
 # Define folder label mappings
 folder_mappings = {
-    "A": {"A_2hz": 0, "A_20hz": 1},
-    "B": {"B_2hz": 0, "B_20hz": 1},
-    "Mix": {"Twenty_hz_Mix": 0, "Two_hz_Mix": 1}
+    "Stim 1": {"Stim_1 2 Hz": 0, "Stim_1 20 Hz": 1},
+    "Stim 2": {"Stim_2 2 Hz": 0, "Stim_2 20 Hz": 1},
+    "Stim Mix": {"Stim_Mix 2 hz": 0, "Stim_Mix 20 hz": 1}
 }
 
 # Define processing parameters
