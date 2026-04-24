@@ -18,29 +18,28 @@ h.load_file("stdrun.hoc")
 from neuron.units import µm,mV,ms
 
 
-
-with open('SpikeTimes_2hz_correlated.txt', 'r') as file:
+with open('SpikeTimes_Stim.Mix_2hz.txt', 'r') as file:
     spike_times = file.read()
 Spike_times_2hz = ast.literal_eval(spike_times)
-with open('SpikeTimes_20hz_correlated.txt', 'r') as file:
+with open('SpikeTimes_Stim.Mix_20hz.txt', 'r') as file:
     spike_times = file.read()
 Spike_times_20hz = ast.literal_eval(spike_times)
-with open('SpikeTimes_A_odour_2hz.txt', 'r') as file:
+with open('SpikeTimes_Stim.1_2hz.txt', 'r') as file:
     spike_times = file.read()
 Spike_times_A2hz = ast.literal_eval(spike_times)
-with open('SpikeTimes_A_odour_20hz.txt', 'r') as file:
+with open('SpikeTimes_Stim.1_20hz.txt', 'r') as file:
     spike_times = file.read()
 Spike_times_A20hz = ast.literal_eval(spike_times)
-with open('SpikeTimes_B_odour_2hz.txt', 'r') as file:
+with open('SpikeTimes_Stim.2_2hz.txt', 'r') as file:
     spike_times = file.read()
 Spike_times_B2hz = ast.literal_eval(spike_times)
-with open('SpikeTimes_B_odour_20hz.txt', 'r') as file:
+with open('SpikeTimes_Stim.2_20hz.txt', 'r') as file:
     spike_times = file.read()
 Spike_times_B20hz = ast.literal_eval(spike_times)
 
-Spike_times_list = [Spike_times_B2hz,Spike_times_B20hz]
+Spike_times_list = [Spike_times_2hz,Spike_times_20hz,Spike_times_A2hz,Spike_times_A20hz,Spike_times_B2hz,Spike_times_B20hz]
 
-Odours_name = ["B odour 2 Hz","B odour 20 Hz"]
+Odours_name = ["Stim_Mix 2 hz","Stim_Mix 20 hz","Stim_1 2 Hz","Stim_1 20 Hz","Stim_2 2 Hz","Stim_2 20 Hz"]
 
 
 class pyramidal:
