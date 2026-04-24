@@ -19,28 +19,28 @@ from neuron.units import µm,mV,ms
 
 
 
-with open('SpikeTimes_2hz_correlated.txt', 'r') as file:
+with open('SpikeTimes_Stim.Mix_2hz.txt', 'r') as file:
     spike_times = file.read()
 Spike_times_2hz = ast.literal_eval(spike_times)
-with open('SpikeTimes_20hz_correlated.txt', 'r') as file:
+with open('SpikeTimes_Stim.Mix_20hz.txt', 'r') as file:
     spike_times = file.read()
 Spike_times_20hz = ast.literal_eval(spike_times)
-with open('SpikeTimes_A_odour_2hz.txt', 'r') as file:
+with open('SpikeTimes_Stim.1_2hz.txt', 'r') as file:
     spike_times = file.read()
 Spike_times_A2hz = ast.literal_eval(spike_times)
-with open('SpikeTimes_A_odour_20hz.txt', 'r') as file:
+with open('SpikeTimes_Stim.1_20hz.txt', 'r') as file:
     spike_times = file.read()
 Spike_times_A20hz = ast.literal_eval(spike_times)
-with open('SpikeTimes_B_odour_2hz.txt', 'r') as file:
+with open('SpikeTimes_Stim.2_2hz.txt', 'r') as file:
     spike_times = file.read()
 Spike_times_B2hz = ast.literal_eval(spike_times)
-with open('SpikeTimes_B_odour_20hz.txt', 'r') as file:
+with open('SpikeTimes_Stim.2_20hz.txt', 'r') as file:
     spike_times = file.read()
 Spike_times_B20hz = ast.literal_eval(spike_times)
 
 Spike_times_list = [Spike_times_2hz,Spike_times_20hz,Spike_times_A2hz,Spike_times_A20hz,Spike_times_B2hz,Spike_times_B20hz]
 
-Odours_name = ["2 hz correlated", "20 hz correlated", "A odour 2 Hz","A odour 20 Hz","B odour 2 Hz","B odour 20 Hz"]
+Odours_name = ["Stim_Mix 2 hz","Stim_Mix 20 hz","Stim_1 2 Hz","Stim_1 20 Hz","Stim_2 2 Hz","Stim_2 20 Hz"]
 
 
 class pyramidal:
@@ -590,7 +590,7 @@ for idx,Spike_times in enumerate(Spike_times_list):
     base_path = "/home/ankitk23/venv/Control/"
 
     
-    common_saving_path = os.path.join(base_path, odor_name, f'trial {rank+336}')
+    common_saving_path = os.path.join(base_path, odor_name, f'trial {rank+1}')
     os.makedirs(common_saving_path, exist_ok=True)
     
     
@@ -602,7 +602,7 @@ for idx,Spike_times in enumerate(Spike_times_list):
     
     pyr_spike_data = pd.DataFrame(pyr_spike_data)
     pyr_spike_data = pyr_spike_data.reset_index().rename(columns={'index': 'Cells'})
-    pyr_file_name = f'pyr{rank+336}.csv'
+    pyr_file_name = f'pyr{rank+1}.csv'
     pyr_file_path = os.path.join(common_saving_path,pyr_file_name)
     pyr_spike_data.to_csv(pyr_file_path, index=False)
     
@@ -615,7 +615,7 @@ for idx,Spike_times in enumerate(Spike_times_list):
     
     fsi_spike_data = pd.DataFrame(fsi_spike_data)
     fsi_spike_data = fsi_spike_data.reset_index().rename(columns={'index': 'Cells'})
-    fsi_file_name = f'fsi{rank+336}.csv'
+    fsi_file_name = f'fsi{rank+1}.csv'
     fsi_file_path = os.path.join(common_saving_path,fsi_file_name)
     fsi_spike_data.to_csv(fsi_file_path, index=False)
     
@@ -629,7 +629,7 @@ for idx,Spike_times in enumerate(Spike_times_list):
     
     ff_spike_data = pd.DataFrame(ff_spike_data)
     ff_spike_data = ff_spike_data.reset_index().rename(columns={'index': 'Cells'})
-    ff_file_name = f'ff{rank+336}.csv'
+    ff_file_name = f'ff{rank+1}.csv'
     ff_file_path = os.path.join(common_saving_path,ff_file_name)
     ff_spike_data.to_csv(ff_file_path, index=False)
 
@@ -645,7 +645,7 @@ for idx,Spike_times in enumerate(Spike_times_list):
         result_data[column_name] = combined_data
     result_df = pd.DataFrame(result_data)
     # Save to CSV
-    pyrs_file_name = f'ob_input{rank+336}.csv'
+    pyrs_file_name = f'ob_input{rank+1}.csv'
     pyrs_file_path = os.path.join(common_saving_path, pyrs_file_name)
     result_df.to_csv(pyrs_file_path, index=False)
 
